@@ -207,7 +207,7 @@ header {
   font-weight: 600;
 }
 .toggle-nav-bar li.active {
-  background-color: red;
+  background-color: rgb(255, 81, 0);
 }
 .toggle-nav-bar li.active > a {
   font-weight: 600;
@@ -757,7 +757,7 @@ section.qualifications .read-more {
   justify-content: center;
 
   top: calc(150vh - 150px);
-  z-index: var(--z-fixed);
+  z-index: calc(var(--z-fixed)-1);
 }
 section.qualifications .read-more button {
   background: transparent;
