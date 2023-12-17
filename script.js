@@ -100,6 +100,13 @@ for (let i = 0;i<paths.length;i++){
     paths[i].style.setProperty('--length',paths[i].getTotalLength());
 }
 
+let signature_paths = document.querySelectorAll('#signature path');
+console.log(signature_paths)
+for (let i = 0;i<signature_paths.length;i++){
+    signature_paths[i].style.setProperty('--i',i);
+    signature_paths[i].style.setProperty('--length',signature_paths[i].getTotalLength());
+    console.log(signature_paths[i])
+}
 // ***************send email*****************************
 const contactForm = document.getElementById('contact_form'),
     contactMessage = document.getElementById('message');

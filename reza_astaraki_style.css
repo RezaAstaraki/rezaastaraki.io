@@ -299,6 +299,22 @@ section:nth-child(odd) {
   stroke: var(--first-color);
   animation: showtext 1.5s forwards calc(var(--i) * 0.07s + 3s);
 }
+
+#signature{
+  position: absolute;
+  z-index: 1;
+  rotate: -90deg;
+  width: 95%;
+  height: 100%;
+}
+
+#signature path{
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+  /* stroke: var(--first-color); */
+  animation: showtext 2s forwards calc(var(--i) * 1.5s + 3s) ease-out;
+
+}
 @keyframes showtext {
   to {
     stroke-dashoffset: 0;
@@ -367,7 +383,7 @@ section.home {
   min-width: 250px;
   width: 330px;
   max-width: 450px;
-  fill: var(--first-color);
+  fill: rgb(255, 115, 0);
   filter: drop-shadow(rgba(135, 207, 235, 0.3) 0 25px 15px);
 }
 
