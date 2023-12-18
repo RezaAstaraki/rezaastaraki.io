@@ -101,15 +101,23 @@ for (let i = 0;i<paths.length;i++){
 }
 
 let signature_paths = document.querySelectorAll('#signature path');
-console.log(signature_paths)
+
 for (let i = 0;i<signature_paths.length;i++){
     signature_paths[i].style.setProperty('--i',i);
     signature_paths[i].style.setProperty('--length',signature_paths[i].getTotalLength());
-    console.log(signature_paths[i])
+
 }
 // ***************send email*****************************
 const contactForm = document.getElementById('contact_form'),
     contactMessage = document.getElementById('message');
+
+const message_dialog_box = document.getElementById('dialog_message')
+const ok_button = document.querySelector('#dialog_message button')
+const message_for_submit = document.querySelector('#dialog_message h1')
+ok_button.addEventListener('click',()=>message_dialog_box.close())
+
+
+
 
 const sendEmail = (e) => {
     e.preventDefault()
@@ -117,12 +125,18 @@ const sendEmail = (e) => {
     emailjs.sendForm('service_ju33ish', 'template_lbxhsji', '#contact_form', 'EBs9mp-cXQ7WTKn7o')
         .then(() => {
             // if sended suscessfullly
-            console.log('thankyou')
+            message_for_submit.innerHTML='your message sended succesfuly<br>Thank you '
+            message_dialog_box.showModal()
+            contactForm.reset()
         
         }, () => {
             // if not sended
-            console.log('no send')
+            message_for_submit.innerHTML='something is wrong!<br>please try again later'
+            message_dialog_box.showModal()
+            
     })
     
 }
+
+
 contactForm.addEventListener('submit',sendEmail)

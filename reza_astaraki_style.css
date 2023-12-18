@@ -356,7 +356,7 @@ section.home {
   gap: 1rem;
   height: 100vh;
   height: 100svh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .home .explanation-container {
   position: relative;
@@ -1103,6 +1103,56 @@ section.contact .second-row .box {
 .social-icon i {
   margin-left: 2px;
 }
+
+dialog::backdrop{
+  backdrop-filter: blur(5px);
+  background-color: #2a2323ce;
+  /* background-color: #f705ff; */
+}
+
+#dialog_message{
+  top:50%;
+  left:50%;
+  border: none;
+  box-shadow: var(--first-color) 0 0 10px;
+  color: var(--text-clr);
+  background-color: var(--first-color-alt);
+  transform: translate(-50%,-50%);
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1rem ; 
+}
+#dialog_message button {
+  background-color: #fff;
+  border: 1px solid var(--first-color);
+  color: var(--first-color);
+  border-radius: 6px;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  width: 1.5in;
+  font-size: 20px;
+}
+
+#dialog_message button:hover {
+  background-color: #fff;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  font-weight: bolder;
+  text-align: center;
+  cursor: pointer;
+}
+#dialog_message h1{
+  /* color: var(--first-color); */
+  font-size: large;
+  color: #1c1c1c;
+  user-select: none;
+}
+
 
 footer {
   padding: 10px;
