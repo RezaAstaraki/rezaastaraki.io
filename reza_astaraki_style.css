@@ -35,8 +35,11 @@
 
   /* ====================colors================ */
   --hue: 162;
-  --first-color: hsl(var(--hue), 100%, 40%);
-  --first-color-alt: hsl(var(--hue), 56%, 35%);
+  /* --first-color: hsl(var(--hue), 100%, 40%); */
+  /* --first-color-alt: hsl(var(--hue), 56%, 35%); */
+  --first-color:#ff2770 ;
+  --first-color-alt:#03e9f4;
+
   --title-color: hsl(228, 8%, 95%);
   --text-color: hsl(228, 8%, 65%);
   --body-color: hsl(228, 15%, 20%);
@@ -85,7 +88,6 @@
 }
 html {
   scroll-behavior: smooth;
-  /* overflow-x: hidden !important; */
 }
 input,
 button,
@@ -164,7 +166,6 @@ header {
   z-index: var(calc(--z-fixed+1));
 }
 
-/* Check if backdrop-filter is supported */
 @supports (
   (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))
 ) {
@@ -190,10 +191,10 @@ header {
   content: "";
   width: 100%;
   pointer-events: none;
-  border-top: 5px solid #4dffff;
+  border-top: 5px solid var(--first-color-alt);
   transform: scale(1, 0);
-  box-shadow: 0 0 5px #4dffff, 0 0.7rem 10px #4dffff, 0 1.25rem 25px #4dffff,
-    0 1.05rem 30px #4dffff, 0 0.3rem 35px #4dffff;
+  box-shadow: 0 0 5px var(--first-color-alt), 0 0.7rem 10px var(--first-color-alt), 0 1.25rem 25px var(--first-color-alt),
+    0 1.05rem 30px var(--first-color-alt), 0 0.3rem 35px var(--first-color-alt);
   transition: transform 0.3s;
 }
 .toggle-nav-bar li:hover::before {
@@ -207,7 +208,7 @@ header {
   font-weight: 600;
 }
 .toggle-nav-bar li.active {
-  background-color: rgb(255, 81, 0);
+  background-color: var(--first-color);
 }
 .toggle-nav-bar li.active > a {
   font-weight: 600;
@@ -296,7 +297,7 @@ section:nth-child(odd) {
 #intro-text path {
   stroke-dasharray: var(--length);
   stroke-dashoffset: var(--length);
-  stroke: var(--first-color);
+  stroke: var(--first-color-alt);
   animation: showtext 1.5s forwards calc(var(--i) * 0.07s + 3s);
 }
 
@@ -333,13 +334,13 @@ section:nth-child(odd) {
 
   55%,
   60% {
-    filter: drop-shadow(var(--first-color) 0 0 5px)
-      drop-shadow(var(--first-color) 0 0 10px);
+    filter: drop-shadow(var(--first-color-alt) 0 0 5px)
+      drop-shadow(var(--first-color-alt) 0 0 10px);
   }
   75%,
   85% {
-    filter: drop-shadow(var(--first-color) 0 0 5px)
-      drop-shadow(var(--first-color) 0 0 10px);
+    filter: drop-shadow(var(--first-color-alt) 0 0 5px)
+      drop-shadow(var(--first-color-alt) 0 0 10px);
   }
 }
 
@@ -354,6 +355,7 @@ section.home {
   align-items: center;
   gap: 1rem;
   height: 100vh;
+  height: 100svh;
   overflow-x: hidden;
 }
 .home .explanation-container {
@@ -584,7 +586,6 @@ section div.row h1 {
   font-size: 2rem;
   flex-shrink: 0;
   font-weight: 500;
-  /* opacity: 0; */
   color: var(--clr);
 }
 
@@ -600,7 +601,7 @@ section div.row h1 {
     var(--clr) 0 0 50px;
 }
 .skills .card .effect-indicator__active {
-  animation: rotate_indicator 2.5s ease-out forwards 2s;
+  animation: rotate_indicator 1.5s ease-out forwards 1s;
 }
 .skills .card img {
   position: absolute;
@@ -612,7 +613,7 @@ section div.row h1 {
 }
 .skills .card .effect-indicator__active+img{
   transform: translateY(0);
-  transition: .5s 5s !important;
+  transition: .5s 3s !important;
 }
 @keyframes shine {
   0%,
@@ -635,14 +636,14 @@ section div.row h1 {
 }
 .skills .card .effect-circle__active {
   animation: fade_in 1.5s forwards;
-  animation-delay: 4.5s;
+  animation-delay: 2.5s;
 }
 .skills .card .data h1.effect-data-fadein {
   opacity: 0;
 }
 .skills h1.effect-data-fadein__active {
   animation: fade_in 1.5s forwards;
-  animation-delay: 5.5s;
+  animation-delay: 3.5s;
 }
 @keyframes fade_in {
   0% {
@@ -692,7 +693,7 @@ section.qualifications {
   overflow: hidden;
 }
 .certificate-card:hover {
-  box-shadow: inset red 0 0 10px;
+  box-shadow: inset var(--first-color) 0 0 10px, inset var(--first-color) 0 0 5px;
 }
 .certificate-card>a{
   width: fit-content;
@@ -713,7 +714,7 @@ section.qualifications {
 }
 .certificate-card .logo:hover {
   cursor: pointer;
-  background-color: #03e9f4;
+  background-color: var(--first-color-alt);
 }
 
 .certificate-card .title {
@@ -727,17 +728,17 @@ section.qualifications {
 .certificate-card .link-container a {
   color: white;
   position: relative;
-  box-shadow: 0 0 5px red, 0 0 10px red, 0 0 25px red;
+  box-shadow: 0 0 5px var(--first-color), 0 0 10px var(--first-color), 0 0 25px var(--first-color);
   border-radius: 20px;
   padding: 10px 20px;
   height: 40px;
   width: fit-content;
 }
 .certificate-card .link-container a:hover {
-  background-color: #03e9f4;
+  background-color:  var(--first-color-alt);
   color: #050801;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px#03e9f4, 0 0 50px #03e9f4,
-    0 0 300px #03e9f4;
+  box-shadow: 0 0 5px  var(--first-color-alt), 0 0 25px var(--first-color-alt), 0 0 50px  var(--first-color-alt),
+    0 0 300px  var(--first-color-alt);
 }
 .certificate-card .link-container {
   position: absolute;
@@ -1078,13 +1079,12 @@ section.contact .second-row .box {
   min-width: 250px;
   align-items: center;
   justify-content: center;
-  color: white;
   min-width: 30%;
   flex-grow: 1;
 }
 .social-icon {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  background-color: var(--first-color);
+  background-color: var(--first-color-alt);
   height: 40px;
   width: 35px;
   display: flex;
@@ -1098,6 +1098,7 @@ section.contact .second-row .box {
   transform: translateY(-5px);
   filter: drop-shadow(#03e9f4 0 0 5px);
   background-color: #ff2770;
+
 }
 .social-icon i {
   margin-left: 2px;
