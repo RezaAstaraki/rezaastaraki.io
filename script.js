@@ -140,4 +140,4 @@ const sendEmail = (e) => {
 
 
 contactForm.addEventListener('submit',sendEmail)
-message_dialog_box.showModal()
+// message_dialog_box.showModal()
