@@ -265,8 +265,20 @@ section {
   letter-spacing: 0.1rem;
 }
 section:nth-child(odd) {
-  background: var(--bg-clr);
+  /* background: var(--bg-clr); */
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  
 }
+
+section:nth-child(even) {
+
+
+  background-color: #2b4162;
+background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+}
+
+
 /* ======================= enter-lef&right section ======================= */
 .effect-explanation {
   transform: translateX(-110vw);
@@ -526,7 +538,7 @@ section div.row h1 {
   position: relative;
   height: 150px;
   width: 150px;
-  background-color: var(--bg-clr);
+  /* background-color: var(--bg-clr); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -568,7 +580,10 @@ section div.row h1 {
   content: "";
   position: absolute;
   inset: 1px;
-  background-color: var(--bg-clr);
+  background-color: #4d4855;
+  /* background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);; */
+  background-image: linear-gradient(147deg, #4d4855 0%, #201f1f 74%);;
+  /* background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%); */
   border-radius: 50%;
 }
 .skills .card .data {
