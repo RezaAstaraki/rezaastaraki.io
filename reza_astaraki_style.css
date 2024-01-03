@@ -172,6 +172,7 @@ header {
   .toggle-nav-bar {
     backdrop-filter: blur(5px);
     background-color: transparent;
+    color: white;
   }
 }
 
@@ -1189,4 +1190,26 @@ dialog::backdrop {
 
 footer {
   padding: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  section:nth-child(odd) {
+    background-color: #4d4855;
+    background: radial-gradient(
+      #1e5799 0%,
+      #2989d8 50%,
+      /* #207cca 51%, */ #7db9e8 100%
+    );
+  }
+
+  section:nth-child(even) {
+    background-color: #426cab;
+    background: linear-gradient(to right, #159957, #155799);
+    background: radial-gradient(
+      #1e5799 0%,
+      #24659a 50%,
+      /* #207cca 51%,
+       */ #467f48 100%
+    );
+  }
 }
